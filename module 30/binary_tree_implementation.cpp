@@ -22,6 +22,34 @@ void printSpace(int l)
 
 
 }
+////////////////////////inorder format/////
+void inorder(treeNode* root){
+if(root==NULL){
+    return;
+}
+inorder(root->left);
+cout<<root->data<<" ";
+inorder(root->right);
+}
+void preorder(treeNode* root){
+if(root==NULL){
+    return;
+}
+cout<<root->data<<" ";
+preorder(root->left);
+
+preorder(root->right);
+}
+void postorder(treeNode* root){
+if(root==NULL){
+    return;
+}
+
+postorder(root->left);
+
+postorder(root->right);
+cout<<root->data<<" ";
+}
 /*
 printing format
 root: 0
@@ -102,7 +130,7 @@ int main()
         if(cleft!=-1)
         {
             allNode[i]->left=allNode[cleft];
-            cout<<"not "<<endl;
+          // cout<<"not "<<endl;
         }
         if(cright !=-1)
         {
@@ -111,6 +139,12 @@ int main()
     }
 
       printTree(allNode[0],0);
+      inorder(allNode[0]);
+      cout<<endl;
+     preorder(allNode[0]);
+      cout<<endl;
+       postorder(allNode[0]);
+      cout<<endl;
 }
 
 
