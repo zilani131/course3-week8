@@ -14,6 +14,7 @@ public:
         right=NULL;
     }
 };
+//function solution
 bool funSol(Node* root1,Node* root2){
 if(root1==NULL&&root2==NULL)return true;
 if(root1==NULL||root2==NULL)return false;
@@ -23,7 +24,8 @@ if(root1->val!=root2->val)return false;
     return a&&b;
 
 }
-bool isSymetric(Node* root)
+// isSymetric function
+bool isSymmetric(Node* root)
 {
     //base case
     return funSol(root->left,root->right);
@@ -32,10 +34,11 @@ int main(){
 Node*root= new Node(1);
     root->left=new Node(2);
     root->right=new Node(2);
-
-    root->left->right=new Node(3);
-
+    root->left->left=new Node(3);
+    root->left->right=new Node(4);
+    //root->left->right=new Node(3);
+     root->right->left=new Node(4);
     root->right->right=new Node(3);
-    cout<<isSymetric(root);
+    cout<<isSymmetric(root);
 
 }

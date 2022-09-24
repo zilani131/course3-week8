@@ -13,10 +13,9 @@ public:
         right=NULL;
     }
 };
-
+//reverse level order
 void reverselevel_order(Node *root){
-   // cout<<root->val;
-   //if(root==NULL)return;
+
    queue<Node* > q;
    q.push(root);
    stack <int >s;
@@ -33,7 +32,7 @@ void reverselevel_order(Node *root){
         q.push(chk->left);
     }
    }
-   //cout<<s.top();
+
    while(!s.empty()){
     cout<<s.top()<<" ";
     s.pop();
@@ -73,6 +72,10 @@ int main()
 {
      ///////case 1 input
 Node*root=NULL;
-  buildTreeTraversalOrder(root);
+root= new Node(3);
+    root->left=new Node(9);
+    root->right=new Node(20);
+    root->right->left=new Node(15);
+    root->right->right = new Node(7);
    reverselevel_order(root);
 }
